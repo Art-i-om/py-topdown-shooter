@@ -12,11 +12,11 @@ class Player:
         self.health = self.max_health
         self.freeze_damage = False
         self.freeze_damage_timer = 0
-        self.damage_cooldown = 500
+        self.damage_cooldown = 1000
         self.last_damage_time = 0
 
     def draw(self):
-        pygame.draw.rect(self.game.screen, GREEN, self.rect)
+        pygame.draw.rect(self.game.display, GREEN, self.rect)
 
     def movement(self):
         dx, dy = 0, 0
@@ -56,7 +56,7 @@ class Player:
                 self.die()
 
     def die(self):
-        self.game.game_over.run()
+        self.game.trigger_game_over()
 
     def update(self):
         self.movement()

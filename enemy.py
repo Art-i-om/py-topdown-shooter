@@ -19,7 +19,7 @@ class Enemy:
         self.recalculate_interval = 10  # Recalculate path every 10 frames
 
     def draw(self):
-        pygame.draw.rect(self.game.screen, RED, self.rect)
+        pygame.draw.rect(self.game.display, RED, self.rect)
 
     def update(self):
         self.move_with_pathfinding()
